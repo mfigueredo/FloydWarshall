@@ -8,7 +8,7 @@ public class FloydWarshall
   private static final int INFINITY = 9999999;
   int[][] d = null;
   
-  //LISTA DE MATRIZES DE PESOS
+  //LIST OF MATRIX
   ArrayList<int[][]> D = new ArrayList();
   //LISTA DE MATRIZES DE PREDECESSORES
   ArrayList<int[][]> Shortest = new ArrayList();

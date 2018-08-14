@@ -13,33 +13,33 @@ public class Main
     ArrayList<int[][]> floyd = null;
     ArrayList<int[][]> shortest = null;
     
-    //LE GRAFO DO ARQUIVO
+    //READ THE GRAPH
     readMatrix(args[1]);
     
-    //CRIA ELEMENTO QUE USARA O ALGORITMO FLOYWARSHALL
+    //CREATE A FLOYDWARSHALL GRAPH
     FloydWarshall f = new FloydWarshall(d);
     
-    //COMPUTA OS PESOS
+    //GET THE SIZES
     f.getFloyWarshall(size);
     
-    //PEGA LISTA DE MATRIZES DE PESOS E CAMINHOS MAIS CURTOS
+    //GET THE MATRIX AND SHORTEST PATHS
     floyd = f.getFloydWArrayList();
     shortest = f.getShortestPath();
     
-    //VERIFICA SE HA CICLOS NEGATIVOS
+    //VERIFY NEGATIVE CICLES
     if (!f.isThereNegativeCicle(size))
     {
-      //METODO 1 PARA MOSTRAR LISTAS
+      //COMMAND 1 TO SHOW LIST
       if (args[0].equals("1"))
       {
         prinMatrixList(floyd, shortest, size);
       }
-      //METODO 2 PARA MOSTRAR RESULTADOS FINAIS
+      //COMMAND 2 TO SHOW RESULT
       else if (args[0].equals("2")) 
       {
         printResult(floyd.get(size), shortest.get(size), size);
       }
-      //METODO 3 PARA MOSTRAR OS CAMINHOS DE TODOS PARA TODOS
+      //COMMAND 3 TO SHOW ALL POSSIBLE PATHS
       else if (args[0].equals("3"))
       {
         for (int i = 1; i <= size; i++)
